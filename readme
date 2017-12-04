@@ -1,0 +1,1 @@
+go run  main.go subscriber.go handlers.go  "redis://localhost:6379" input output
