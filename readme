@@ -1,1 +1,27 @@
-go run  main.go subscriber.go handlers.go  "redis://localhost:6379" input output
+
+this is my fist go project
+i wrote a redis subscriber that listens for massages with 2 data types and an operator
+and dose some sort of processing on the data.
+
+this is where most of the important stuff happens 
+
+"run(redisAdrr string, inputChannel string, outputChannel string,bufferSize int,handlers []Handler) "
+receives the redis address input and output channel names the buffer size for the channel and an array of handlers
+
+handler is an interface() that has two methods:
+  apply(data commons.Input) string
+  applysTo() string
+
+when we receive the array of handlers we map the handler to the operator that corresponds with it,
+when handling a message we get the correct handler from the map and we use apply on the data,
+we send the res to the output channel. 
+
+subscriber.go -> reads meesages from redis channel uses a handler that corresponds to the correct operator 
+
+publisher.go  -> just an example to send some massegs to the calculator
+
+to run the subscriber with a local redis server 
+cd to subscriber dir and
+"go run  main.go subscriber.go handlers.go  "redis://localhost:6379" input output"
+
+(same for publisher)
