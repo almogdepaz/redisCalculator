@@ -16,6 +16,9 @@ when we receive the array of handlers we map the handler to the operator that co
 when handling a message we get the correct handler from the map and we use apply on the data,
 we send the res to the output channel. 
 
+the reason the handler array is injected into subscriber is that we 
+want to be able to add more handlers without changing "subscriber.go" where the main logic happens.
+
 subscriber.go -> reads meesages from redis channel uses a handler that corresponds to the correct operator 
 
 publisher.go  -> just an example to send some massegs to the calculator
