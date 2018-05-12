@@ -6,7 +6,7 @@ import (
 	"github.com/soveran/redisurl"
 	"strings"
 	"encoding/json"
-	"redisCalculator/commons"
+	"redis_calculator/commons"
 )
 
 

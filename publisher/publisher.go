@@ -4,7 +4,7 @@ import (
 	"os"
 	"fmt"
 	"encoding/json"
-	"redisCalculator/commons"
+	"redis_calculator/commons"
 )
 
 
